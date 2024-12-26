@@ -1,0 +1,10 @@
+#Thu Dec 26 23:02:29 GMT 2024
+base.0=/Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/test/build/intermediates/dex/debugAndroidTest/mergeExtDexDebugAndroidTest/classes.dex
+base.1=/Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/test/build/intermediates/dex/debugAndroidTest/mergeLibDexDebugAndroidTest/6/classes.dex
+base.2=/Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/test/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
+path.0=classes.dex
+path.1=6/classes.dex
+path.2=0/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex

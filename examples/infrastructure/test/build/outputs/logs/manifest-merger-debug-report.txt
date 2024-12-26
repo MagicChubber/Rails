@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/test/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest6425954529112522453.xml:2:13-83
+INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/test/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest6425954529112522453.xml:2:13-83
+	package
+		INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/test/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest6425954529112522453.xml
+	xmlns:android
+		ADDED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/test/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest6425954529112522453.xml:2:23-81
+uses-sdk
+INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/test/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest6425954529112522453.xml reason: use-sdk injection requested
+INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/test/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest6425954529112522453.xml
+INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/test/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest6425954529112522453.xml
+	android:targetSdkVersion
+		INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/test/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest6425954529112522453.xml
+	android:minSdkVersion
+		INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/test/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest6425954529112522453.xml

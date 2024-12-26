@@ -1,0 +1,10 @@
+abi_version=1.8.0
+builtins_platform=WASM
+compiler_version=2.0.0
+depends=kotlin
+ir_signature_versions=1,2
+metadata_version=1.4.1
+serializedIrFileFingerprints=11da8tgnb9632.3mfzetd8s0axe 1dswemmdvc24o.3dm3qsd58jvvl
+serializedKlibFingerprint=15vot0kd1e25z.3lnky9cf20j30
+unique_name=navcompose.examples.feature.videorails.domain\:data
+wasm_targets=wasm-js

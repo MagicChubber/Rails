@@ -1,0 +1,10 @@
+abi_version=1.8.0
+builtins_platform=WASM
+compiler_version=2.0.0
+depends=components.resources\:library components.ui-tooling-preview\:library org.jetbrains.compose.material\:material org.jetbrains.compose.material\:material-ripple org.jetbrains.compose.foundation\:foundation org.jetbrains.compose.animation\:animation org.jetbrains.compose.animation\:animation-core org.jetbrains.kotlinx\:kotlinx-coroutines-core org.jetbrains.kotlinx\:atomicfu org.jetbrains.compose.material\:material-icons-core org.jetbrains.compose.foundation\:foundation-layout org.jetbrains.compose.ui\:ui org.jetbrains.compose.runtime\:runtime-saveable kotlin org.jetbrains.compose.runtime\:runtime org.jetbrains.compose.ui\:ui-text org.jetbrains.compose.ui\:ui-graphics org.jetbrains.compose.ui\:ui-unit org.jetbrains.skiko\:skiko org.jetbrains.compose.ui\:ui-geometry org.jetbrains.compose.ui\:ui-util
+ir_signature_versions=1,2
+metadata_version=1.4.1
+serializedIrFileFingerprints=1hvm14ru5zwft.11ux7ww9zmwrs 2ysqwri3s2zko.p7ftqupas9z6 m82r3g6pyrbc.1uyj5kex0hpag 1p4qsps05y8b0.s0j1lbfodktd 1vsbju4vytgjr.1llmnmqdvxxro
+serializedKlibFingerprint=2gix99n20nnhu.1jtjkjswkjc98
+unique_name=navcompose.examples.infrastructure.presentation\:ui
+wasm_targets=wasm-js

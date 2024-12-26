@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/presentation/ui/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest12431372235474997408.xml:2:13-83
+INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/presentation/ui/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest12431372235474997408.xml:2:13-83
+	package
+		INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/presentation/ui/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest12431372235474997408.xml
+	xmlns:android
+		ADDED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/presentation/ui/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest12431372235474997408.xml:2:23-81
+uses-sdk
+INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/presentation/ui/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest12431372235474997408.xml reason: use-sdk injection requested
+INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/presentation/ui/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest12431372235474997408.xml
+INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/presentation/ui/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest12431372235474997408.xml
+	android:targetSdkVersion
+		INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/presentation/ui/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest12431372235474997408.xml
+	android:minSdkVersion
+		INJECTED from /Users/mylesbennett/Repositories/navcompose/typesafe/examples/infrastructure/presentation/ui/build/intermediates/tmp/ProcessLibraryManifest/release/tempAndroidManifest12431372235474997408.xml

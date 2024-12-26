@@ -1,0 +1,32 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "navcompose"
+include(":examples:appwith")
+include(":examples:feature:videorails:domain:data")
+include(":examples:feature:videorails:domain:repository")
+include(":examples:feature:videorails:domain:usecase")
+include(":examples:feature:videorails:data")
+include(":examples:feature:videorails:presentation:state")
+include(":examples:feature:videorails:presentation:ui")
+include(":examples:infrastructure:presentation:state")
+include(":examples:infrastructure:presentation:ui")
+include(":examples:infrastructure:test")

@@ -1,0 +1,8 @@
+com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data-pngs-0 /Users/mylesbennett/Repositories/navcompose/typesafe/examples/feature/videorails/domain/data/build/generated/res/pngs/release
+com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data-resValues-1 /Users/mylesbennett/Repositories/navcompose/typesafe/examples/feature/videorails/domain/data/build/generated/res/resValues/release
+com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data-mergeReleaseResources-2 /Users/mylesbennett/Repositories/navcompose/typesafe/examples/feature/videorails/domain/data/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data-mergeReleaseResources-3 /Users/mylesbennett/Repositories/navcompose/typesafe/examples/feature/videorails/domain/data/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data-release-4 /Users/mylesbennett/Repositories/navcompose/typesafe/examples/feature/videorails/domain/data/build/intermediates/merged_res/release/mergeReleaseResources
+com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data-androidMain-5 /Users/mylesbennett/Repositories/navcompose/typesafe/examples/feature/videorails/domain/data/src/androidMain/res
+com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data-main-6 /Users/mylesbennett/Repositories/navcompose/typesafe/examples/feature/videorails/domain/data/src/main/res
+com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data-release-7 /Users/mylesbennett/Repositories/navcompose/typesafe/examples/feature/videorails/domain/data/src/release/res
