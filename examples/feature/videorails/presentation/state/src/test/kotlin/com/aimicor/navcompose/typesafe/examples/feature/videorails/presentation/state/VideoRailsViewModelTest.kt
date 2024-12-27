@@ -1,7 +1,7 @@
 package com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.state
 
 import app.cash.turbine.test
-import com.aimicor.navcompose.typesafe.examples.feature.FetchVideoRailsUseCase
+import com.aimicor.navcompose.typesafe.examples.feature.usecase.FetchVideoRailsUseCase
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRail
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.ui.VideoRailsEvent
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.ui.VideoRailsUiState

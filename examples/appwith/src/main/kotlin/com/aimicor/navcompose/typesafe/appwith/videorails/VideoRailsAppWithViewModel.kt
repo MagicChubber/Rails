@@ -1,6 +1,6 @@
 package com.aimicor.navcompose.typesafe.appwith.videorails
 
-import com.aimicor.navcompose.typesafe.examples.feature.FetchVideoRailsUseCase
+import com.aimicor.navcompose.typesafe.examples.feature.usecase.FetchVideoRailsUseCase
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.state.VideoRailsViewModel
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.ui.VideoRailsEvent
 import dagger.hilt.android.lifecycle.HiltViewModel

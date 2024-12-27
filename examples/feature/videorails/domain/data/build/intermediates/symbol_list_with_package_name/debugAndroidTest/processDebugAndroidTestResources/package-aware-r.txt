@@ -1,1 +1,0 @@
-com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.test

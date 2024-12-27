@@ -1,7 +1,7 @@
 package com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.state
 
 import androidx.lifecycle.viewModelScope
-import com.aimicor.navcompose.typesafe.examples.feature.FetchVideoRailsUseCase
+import com.aimicor.navcompose.typesafe.examples.feature.usecase.FetchVideoRailsUseCase
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.ui.VideoRailsEvent
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.ui.VideoRailsUiState
 import com.aimicor.uniflow.UniflowViewModel

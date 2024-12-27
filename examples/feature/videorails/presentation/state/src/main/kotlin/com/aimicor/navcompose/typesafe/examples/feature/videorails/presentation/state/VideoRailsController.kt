@@ -9,18 +9,9 @@ import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.
 
 @Composable
 fun VideoRailsController(
-    uniflow: VideoRailsUniflow<*>/* = hiltViewModel<VideoRailsViewModel>()*/
+    uniflow: VideoRailsUniflow<*>
 ) {
     val state by uniflow.uiState.collectAsStateWithLifecycle()
     VideoRailsUiContent(state, uniflow::handleEvent)
     BackHandler { uniflow.handleEvent(VideoRailsEvent.OnCloseClicked) }
-
-//    val localContext = LocalContext.current
-//    uniflow.sideEffect.collectWithLifecycle { effect ->
-//        when (effect) {
-//            VideoRailsSideEffect.Close -> (localContext as? Activity)?.finish()
-//            // other side effects...
-//            is VideoRailsSideEffect.GoToVideo -> TODO()
-//        }
-//    }
 }

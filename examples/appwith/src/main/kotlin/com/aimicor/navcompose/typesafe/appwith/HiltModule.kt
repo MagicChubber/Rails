@@ -1,6 +1,6 @@
 package com.aimicor.navcompose.typesafe.appwith
 
-import com.aimicor.navcompose.typesafe.examples.feature.FetchVideoRailsUseCase
+import com.aimicor.navcompose.typesafe.examples.feature.usecase.FetchVideoRailsUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
