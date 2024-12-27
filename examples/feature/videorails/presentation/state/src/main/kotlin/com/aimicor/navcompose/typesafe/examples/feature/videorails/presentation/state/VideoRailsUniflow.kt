@@ -4,5 +4,5 @@ import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.ui.VideoRailsUiState
 import com.aimicor.uniflow.Uniflow
 
-interface VideoRailsUniflow
-    : Uniflow<VideoRailsEvent, VideoRailsUiState, VideoRailsSideEffect>
+interface VideoRailsUniflow<EFFECT>
+    : Uniflow<VideoRailsEvent, VideoRailsUiState, EFFECT>

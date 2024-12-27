@@ -2,8 +2,6 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
 }
 
 android {
@@ -45,9 +43,6 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.runtime.compose)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.hilt.navcompose)
-    implementation(libs.hilt)
-    ksp(libs.hilt.compiler)
     implementation(project(":examples:feature:videorails:domain:usecase"))
     implementation(project(":examples:feature:videorails:domain:data"))
     implementation(project(":examples:feature:videorails:presentation:ui"))

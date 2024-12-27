@@ -3,7 +3,6 @@ package com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation
 import app.cash.turbine.test
 import com.aimicor.navcompose.typesafe.examples.feature.FetchVideoRailsUseCase
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRail
-import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRailItem
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.ui.VideoRailsEvent
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.ui.VideoRailsUiState
 import com.aimicor.sunthumbs.infrastructure.test.TestCoroutineRule
@@ -27,18 +26,7 @@ class VideoRailsViewModelTest {
         override suspend fun invoke() = resultFlow.receive()
     }
 
-    private val viewModel by lazy { VideoRailsViewModel(testUseCase) }
-
-    @Test
-    fun `WHEN back button event THEN effect is sent to view`() = runTest {
-        // When
-        viewModel.handleEvent(VideoRailsEvent.OnCloseClicked)
-
-        // Then
-        viewModel.sideEffect.test {
-            assertTrue(awaitItem() is VideoRailsSideEffect.Close)
-        }
-    }
+    private val viewModel by lazy { VideoRailsViewModel<Unit>(testUseCase) }
 
     @Test
     fun `WHEN initialised THEN ui state is loading`() = runTest {
@@ -142,32 +130,6 @@ class VideoRailsViewModelTest {
         // Then
         viewModel.uiState.test{
             assertTrue(awaitItem() is VideoRailsUiState.Success)
-        }
-    }
-
-    @Test
-    fun `WHEN video item clicked THEN effect is sent to view`() = runTest {
-        // Given
-        val id = "fsdffsdfsdf"
-        val railTitle = "rail"
-        val item = VideoRailItem(
-            id = id,
-            title = "",
-            imgUrl = ""
-        )
-        val videoRail = VideoRail(
-            title = railTitle,
-            items = listOf(item)
-        )
-
-        // When
-        viewModel.handleEvent(VideoRailsEvent.OnVideoItemClicked(item, videoRail))
-
-        // Then
-        viewModel.sideEffect.test {
-            val effect = awaitItem()
-            assertTrue(effect is VideoRailsSideEffect.GoToVideo)
-            assertEquals(id, effect.id)
         }
     }
 }
