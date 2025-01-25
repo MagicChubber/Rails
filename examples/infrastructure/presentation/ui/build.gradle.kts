@@ -24,9 +24,13 @@ kotlin {
         }
     }
 
+    js(IR) {
+        browser()
+    }
     iosX64()
     iosArm64()
     iosSimulatorArm64()
+//    linuxX64()
 
     sourceSets {
         val desktopMain by getting

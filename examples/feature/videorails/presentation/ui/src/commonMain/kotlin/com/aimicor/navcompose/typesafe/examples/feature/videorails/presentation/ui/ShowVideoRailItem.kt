@@ -16,8 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRailItem
-import navcompose.examples.feature.videorails.presentation.ui.generated.resources.Res
-import navcompose.examples.feature.videorails.presentation.ui.generated.resources.placeholder_landscape
+import com.aimicor.navcompose.typesafe.examples.infrastructure.presentation.ui.ShowImage
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -32,13 +31,11 @@ fun ShowVideoRailItem(
             .width(160.dp)
             .clickable { itemSelected() }
     ) {
-        Image(
+        ShowImage(
             modifier = Modifier
                 .height(90.dp)
                 .fillMaxWidth()
                 .border(BorderStroke(1.dp, MaterialTheme.colors.onBackground)),
-            painter = painterResource(Res.drawable.placeholder_landscape),
-            contentDescription = null,
         )
         Text(
             text = videoItem.title,
@@ -55,6 +52,7 @@ private fun ShowVideoRailItemPreview() {
     val videoItem = VideoRailItem(
         id = "",
         title = "me dropping spaghetti dropping spaghetti",
+        description = "the cat sat on the mat and it was a sprat in a river that did not deliver",
         imgUrl = "https://live.staticflickr.com/31337/53691497275_2fbfafa281.jpg"
     )
     ShowVideoRailItem(videoItem = videoItem) {}

@@ -53,6 +53,7 @@ private fun ShowVideoRailsPreview() {
     val videoItem = VideoRailItem(
         id = "",
         title = "",
+        description = "the cat sat on the mat and it was a sprat in a river that did not deliver",
         imgUrl = "https://live.staticflickr.com/31337/53691497275_2fbfafa281.jpg"
     )
     val videoRailItems = mutableListOf<VideoRailItem>()

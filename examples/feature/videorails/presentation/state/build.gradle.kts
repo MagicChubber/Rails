@@ -1,55 +1,64 @@
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+
 plugins {
+    alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
+}
+
+kotlin {
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs()
+
+    jvm()
+    androidTarget {
+        publishLibraryVariants("release")
+        @OptIn(ExperimentalKotlinGradlePluginApi::class)
+        compilerOptions {
+            jvmTarget.set(JvmTarget.valueOf(libs.versions.jvm.target.get()))
+        }
+    }
+
+    js(IR) {
+        browser()
+    }
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
+//    linuxX64()
+
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                implementation(compose.runtime)
+                implementation(libs.jetbrains.lifecycle.viewmodel)
+                implementation(project(":examples:infrastructure:uniflow"))
+                implementation(project(":examples:feature:videorails:presentation:ui"))
+                implementation(project(":examples:feature:videorails:domain:usecase"))
+                implementation(project(":examples:infrastructure:collectcmp"))
+            }
+        }
+        val commonTest by getting {
+            dependencies {
+                implementation(libs.kotlin.test)
+            }
+        }
+    }
 }
 
 android {
     val moduleName = path.split(":").drop(1).joinToString(".")
     val name = libs.versions.namespace.get()
-    namespace = if (moduleName.isNotEmpty()) "$name.$moduleName" else name
+    namespace = if(moduleName.isNotEmpty()) "$name.$moduleName" else name
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.valueOf(libs.versions.java.get())
         targetCompatibility = JavaVersion.valueOf(libs.versions.java.get())
     }
-    kotlinOptions {
-        jvmTarget = libs.versions.android.kotlin.jvm.get()
-    }
-}
-
-dependencies {
-
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.material)
-    implementation(libs.uniflow)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.runtime.compose)
-    implementation(libs.androidx.activity.compose)
-    implementation(project(":examples:feature:videorails:domain:usecase"))
-    implementation(project(":examples:feature:videorails:domain:data"))
-    implementation(project(":examples:feature:videorails:presentation:ui"))
-    testImplementation(project(":examples:infrastructure:test"))
-    testImplementation(libs.kotlinx.coroutines.test)
-    testImplementation(libs.kotlin.test.junit)
-    testImplementation(libs.turbine)
-    androidTestImplementation(libs.androidx.test.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
 }

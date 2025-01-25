@@ -13,6 +13,7 @@ private class VideoRailsRepositoryImpl : VideoRailsRepository {
         val videoItem = VideoRailItem(
             id = "",
             title = "",
+            description = "the cat sat on the mat and it was a sprat in a river that did not deliver",
             imgUrl = "https://www.blah.com/blah?blah1=blah1&blah2=3"
         )
         for (rail in 0..99) {
