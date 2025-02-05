@@ -9,22 +9,24 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.aimicor.navcompose.typesafe.examples.feature.videoplayer.domain.data.SelectedVideo
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRailItem
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun ShowVideoPlayer(
-    state: VideoPlayerUiState, event: (VideoRailItem) -> Unit
+    state: VideoPlayerUiState,
+    event: (VideoRailItem) -> Unit
 ) {
     Column {
         VideoPlayer(state)
         Column(modifier = Modifier.padding(10.dp)) {
             Text(
-                text = state.selectedVideo.title,
+                text = state.selectedVideo.video.title,
                 fontSize = MaterialTheme.typography.h4.fontSize
             )
             Text(
-                text = state.selectedVideo.description,
+                text = state.selectedVideo.video.description,
                 fontSize = MaterialTheme.typography.body2.fontSize
             )
             LazyColumn(modifier = Modifier.padding(top = 10.dp)) {
@@ -51,7 +53,11 @@ private fun ShowVideoPlayerPreview() {
         videoRailItems.add(videoItem.copy(id = i.toString(), title = "$i video"))
     }
     val state = VideoPlayerUiState(
-        selectedVideo = videoRailItems.first(), videos = videoRailItems
+        selectedVideo = SelectedVideo(
+            videoUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            video = videoItem
+        ),
+        videos = videoRailItems
     )
     ShowVideoPlayer(state) {}
 }

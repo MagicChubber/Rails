@@ -25,7 +25,7 @@ fun VideoPlayer(state: VideoPlayerUiState) {
             )
     ) {
         Text(
-            text = state.selectedVideo.title,
+            text = state.selectedVideo.videoUrl,
             fontSize = MaterialTheme.typography.body1.fontSize,
             textAlign = TextAlign.Center,
             modifier = Modifier.align(Alignment.Center)

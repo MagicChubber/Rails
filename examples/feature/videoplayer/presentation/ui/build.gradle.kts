@@ -41,6 +41,7 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(project(":examples:feature:videorails:domain:data"))
+            implementation(project(":examples:feature:videoplayer:domain:data"))
             implementation(project(":examples:infrastructure:presentation:ui"))
         }
         desktopMain.dependencies {

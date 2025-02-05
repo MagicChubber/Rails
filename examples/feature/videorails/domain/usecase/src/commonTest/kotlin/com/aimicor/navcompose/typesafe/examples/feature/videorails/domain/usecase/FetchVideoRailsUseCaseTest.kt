@@ -1,5 +1,7 @@
-package com.aimicor.navcompose.typesafe.examples.feature.usecase
+package com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.usecase
 
+import com.aimicor.navcompose.typesafe.examples.feature.usecase.FakeHomeRepository
+import com.aimicor.navcompose.typesafe.examples.feature.usecase.FetchVideoRailsUseCase
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRail
 import kotlinx.coroutines.test.runTest
 import kotlin.test.Test
