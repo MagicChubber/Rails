@@ -10,8 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRail
-import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRailItem
+import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.entity.VideoRail
+import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.entity.VideoRailItem
+import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.state.VideoRailsEvent
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable

@@ -8,8 +8,8 @@ plugins {
 }
 
 kotlin {
-    @OptIn(ExperimentalWasmDsl::class)
-    wasmJs()
+    //@OptIn(ExperimentalWasmDsl::class)
+    //wasmJs()
 
     jvm()
     androidTarget {
@@ -31,8 +31,8 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                implementation(project(":examples:feature:videorails:domain:data"))
-                implementation(project(":examples:feature:videoplayer:domain:data"))
+                implementation(project(":examples:feature:videorails:domain:entity"))
+                implementation(project(":examples:feature:videoplayer:domain:entity"))
                 implementation(project(":examples:feature:videoplayer:domain:repository"))
             }
         }

@@ -15,7 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRailItem
+import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.entity.VideoRailItem
 import com.aimicor.navcompose.typesafe.examples.infrastructure.presentation.ui.ShowImage
 
 @Composable

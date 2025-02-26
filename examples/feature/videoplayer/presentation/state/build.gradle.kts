@@ -43,7 +43,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.runtime.compose)
     implementation(libs.androidx.activity.compose)
-    implementation(project(":examples:feature:videorails:domain:data"))
+    implementation(project(":examples:feature:videorails:domain:entity"))
     implementation(project(":examples:feature:videoplayer:presentation:ui"))
     testImplementation(project(":examples:infrastructure:test"))
     testImplementation(libs.kotlinx.coroutines.test)

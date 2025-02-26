@@ -10,8 +10,8 @@ plugins {
 }
 
 kotlin {
-    @OptIn(ExperimentalWasmDsl::class)
-    wasmJs()
+    //@OptIn(ExperimentalWasmDsl::class)
+    //wasmJs()
 
     jvm()
     androidTarget {

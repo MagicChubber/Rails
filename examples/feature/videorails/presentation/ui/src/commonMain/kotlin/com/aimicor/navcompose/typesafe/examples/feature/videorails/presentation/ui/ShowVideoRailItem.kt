@@ -1,7 +1,6 @@
 package com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.ui
 
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -15,9 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRailItem
+import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.entity.VideoRailItem
 import com.aimicor.navcompose.typesafe.examples.infrastructure.presentation.ui.ShowImage
-import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable

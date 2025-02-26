@@ -5,13 +5,11 @@ import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.compose)
-    alias(libs.plugins.compose.compiler)
 }
 
 kotlin {
-    @OptIn(ExperimentalWasmDsl::class)
-    wasmJs()
+    //@OptIn(ExperimentalWasmDsl::class)
+    //wasmJs()
 
     jvm()
     androidTarget {
@@ -31,14 +29,18 @@ kotlin {
 //    linuxX64()
 
     sourceSets {
+//        val androidMain by getting {
+//            dependencies {
+//                implementation(libs.koin.android)
+//            }
+//        }
         val commonMain by getting {
             dependencies {
-                implementation(compose.runtime)
+                implementation(libs.koin.core)
                 implementation(libs.jetbrains.lifecycle.viewmodel)
                 implementation(project(":examples:infrastructure:uniflow"))
-                implementation(project(":examples:feature:videorails:presentation:ui"))
                 implementation(project(":examples:feature:videorails:domain:usecase"))
-                implementation(project(":examples:infrastructure:collectcmp"))
+                implementation(project(":examples:feature:videorails:domain:entity"))
             }
         }
         val commonTest by getting {

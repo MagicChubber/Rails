@@ -1,8 +1,8 @@
 package com.aimicor.navcompose.typesafe.examples.feature.videoplayer.domain.usecase
 
-import com.aimicor.navcompose.typesafe.examples.feature.videoplayer.domain.data.SelectedVideo
+import com.aimicor.navcompose.typesafe.examples.feature.videoplayer.domain.entity.SelectedVideo
 import com.aimicor.navcompose.typesafe.examples.feature.videoplayer.domain.repository.VideoPlayerRepository
-import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRailItem
+import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.entity.VideoRailItem
 
 interface FetchSelectedVideoUseCase {
     suspend operator fun invoke(video: VideoRailItem): Result<SelectedVideo>

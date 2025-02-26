@@ -9,8 +9,8 @@ plugins {
 
 kotlin {
 
-    @OptIn(ExperimentalWasmDsl::class)
-    wasmJs()
+    //@OptIn(ExperimentalWasmDsl::class)
+    //wasmJs()
 
     jvm()
     androidTarget {
@@ -33,7 +33,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(project(":examples:feature:videorails:domain:repository"))
-                implementation(project(":examples:feature:videorails:domain:data"))
+                implementation(project(":examples:feature:videorails:domain:entity"))
             }
         }
         val commonTest by getting {

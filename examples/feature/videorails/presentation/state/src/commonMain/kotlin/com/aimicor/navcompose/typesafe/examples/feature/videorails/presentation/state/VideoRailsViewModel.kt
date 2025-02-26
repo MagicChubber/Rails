@@ -1,15 +1,13 @@
 package com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.state
 
 import androidx.lifecycle.viewModelScope
-import com.aimicor.navcompose.typesafe.examples.feature.usecase.FetchVideoRailsUseCase
-import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.ui.VideoRailsEvent
-import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.ui.VideoRailsUiState
+import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.usecase.FetchVideoRailsUseCase
 import com.aimicor.uniflow.UniflowViewModel
 import kotlinx.coroutines.launch
 
-open class VideoRailsViewModel<EFFECT>(
+internal class VideoRailsViewModel(
     val fetchRailsUseCase: FetchVideoRailsUseCase
-) : VideoRailsUniflow<EFFECT>, UniflowViewModel<VideoRailsEvent, VideoRailsUiState, EFFECT>(
+) : VideoRailsUniflow, UniflowViewModel<VideoRailsEvent, VideoRailsUiState, VideoRailsSideEffect>(
     initialUiState = VideoRailsUiState.Loading
 ) {
 
@@ -19,9 +17,9 @@ open class VideoRailsViewModel<EFFECT>(
 
     override fun handleEvent(event: VideoRailsEvent) {
         if (event is VideoRailsEvent.OnRetryClicked) setUiState {
-            fetchVideoRails()
             VideoRailsUiState.Loading
         }
+        fetchVideoRails()
     }
 
     private fun fetchVideoRails() = viewModelScope.launch {

@@ -10,8 +10,8 @@ plugins {
 }
 
 kotlin {
-    @OptIn(ExperimentalWasmDsl::class)
-    wasmJs()
+    //@OptIn(ExperimentalWasmDsl::class)
+    //wasmJs()
 
     jvm("desktop")
     androidTarget {
@@ -40,8 +40,8 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
-            implementation(project(":examples:feature:videorails:domain:data"))
-            implementation(project(":examples:feature:videoplayer:domain:data"))
+            implementation(project(":examples:feature:videorails:domain:entity"))
+            implementation(project(":examples:feature:videoplayer:domain:entity"))
             implementation(project(":examples:infrastructure:presentation:ui"))
         }
         desktopMain.dependencies {

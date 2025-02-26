@@ -1,6 +1,6 @@
 package com.aimicor.navcompose.typesafe.examples.feature.usecase
 
-import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRail
+import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.entity.VideoRail
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.repository.VideoRailsRepository
 
 class FakeHomeRepository(

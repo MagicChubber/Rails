@@ -20,8 +20,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "navcompose"
-include(":examples:appwith")
-include(":examples:feature:videorails:domain:data")
+include(":examples:feature:videorails:domain:entity")
 include(":examples:feature:videorails:domain:repository")
 include(":examples:feature:videoplayer:domain:repository")
 include(":examples:feature:videorails:domain:usecase")
@@ -36,4 +35,4 @@ include(":examples:infrastructure:presentation:ui")
 include(":examples:infrastructure:test")
 include(":examples:infrastructure:uniflow")
 include(":examples:infrastructure:collectcmp")
-include(":examples:feature:videoplayer:domain:data")
+include(":examples:feature:videoplayer:domain:entity")

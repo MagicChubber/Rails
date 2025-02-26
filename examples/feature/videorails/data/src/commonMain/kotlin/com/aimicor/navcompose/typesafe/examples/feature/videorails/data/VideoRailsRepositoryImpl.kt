@@ -1,7 +1,7 @@
 package com.aimicor.navcompose.typesafe.examples.feature.videorails.data
 
-import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRail
-import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.data.VideoRailItem
+import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.entity.VideoRail
+import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.entity.VideoRailItem
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.repository.VideoRailsRepository
 
 operator fun VideoRailsRepository.Companion.invoke(): VideoRailsRepository =
