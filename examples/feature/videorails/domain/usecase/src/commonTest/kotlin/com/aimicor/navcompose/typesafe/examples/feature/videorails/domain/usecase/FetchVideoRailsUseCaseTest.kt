@@ -13,7 +13,7 @@ class FetchVideoRailsUseCaseTest {
 
     @Test
     fun test() = runTest {
-        val useCase = FetchVideoRailsUseCase(repository)
+        val useCase = FetchVideoRailsUseCaseImpl(repository)
         assertEquals(listResult, useCase())
     }
 }
