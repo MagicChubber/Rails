@@ -36,4 +36,6 @@ include(":examples:infrastructure:test")
 include(":examples:infrastructure:uniflow")
 include(":examples:infrastructure:collectcmp")
 include(":examples:feature:videoplayer:domain:entity")
-include(":examples:androidapp")
+include(":examples:composeApp")
+
+includeBuild ("convention-plugins")
