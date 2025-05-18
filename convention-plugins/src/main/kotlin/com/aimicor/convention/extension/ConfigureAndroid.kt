@@ -1,7 +1,8 @@
-package com.aimicor.convention.ext
+package com.aimicor.convention.extension
 
 import com.android.build.gradle.LibraryExtension
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.getByType
 
 fun Project.android(configure: LibraryExtension.() -> Unit) =
-    (extensions.getByName("android") as? LibraryExtension)?.apply { configure() }
+    extensions.getByType<LibraryExtension>().apply(configure)

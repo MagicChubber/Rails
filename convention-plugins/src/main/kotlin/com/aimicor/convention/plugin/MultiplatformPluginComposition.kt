@@ -1,39 +1,36 @@
-package com.aimicor.convention.composition
+package com.aimicor.convention.plugin
 
-import com.aimicor.convention.config.TypeLibrary.KOTLIN_TEST
-import com.aimicor.convention.config.TypePlugin.ANDROID_LIBRARY
-import com.aimicor.convention.config.TypePlugin.KOTLIN_MULTIPLATFORM
-import com.aimicor.convention.config.TypeVersion.COMPILE_SDK
-import com.aimicor.convention.config.TypeVersion.JAVA
-import com.aimicor.convention.config.TypeVersion.JVM_TARGET
-import com.aimicor.convention.config.TypeVersion.MIN_SDK
-import com.aimicor.convention.config.TypeVersion.NAMESPACE
-import com.aimicor.convention.ext.alias
-import com.aimicor.convention.ext.android
-import com.aimicor.convention.ext.invoke
-import com.aimicor.convention.ext.kotlin
-import com.aimicor.convention.ext.libs
-import com.aimicor.convention.ext.plugin
-import com.aimicor.convention.ext.plugins
-import com.aimicor.convention.ext.sourceSets
-import com.aimicor.convention.ext.versions
+import com.aimicor.convention.config.Libraries.KOTLIN_TEST
+import com.aimicor.convention.config.Plugins.ANDROID_LIBRARY
+import com.aimicor.convention.config.Plugins.KOTLIN_MULTIPLATFORM
+import com.aimicor.convention.config.Versions.COMPILE_SDK
+import com.aimicor.convention.config.Versions.JAVA
+import com.aimicor.convention.config.Versions.JVM_TARGET
+import com.aimicor.convention.config.Versions.MIN_SDK
+import com.aimicor.convention.config.Versions.NAMESPACE
+import com.aimicor.convention.extension.android
+import com.aimicor.convention.extension.invoke
+import com.aimicor.convention.extension.kotlin
+import com.aimicor.convention.extension.libs
+import com.aimicor.convention.extension.plugins
+import com.aimicor.convention.extension.versions
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
-fun Project.androidLibraryComposition() {
+fun Project.multiplatformPluginComposition() {
 
     plugins {
-        alias(libs.plugin(ANDROID_LIBRARY))
-        alias(libs.plugin(KOTLIN_MULTIPLATFORM))
+        apply(libs.plugins(ANDROID_LIBRARY))
+        apply(libs.plugins(KOTLIN_MULTIPLATFORM))
     }
 
     kotlin {
         //@OptIn(ExperimentalWasmDsl::class)
         //wasmJs()
 
-        jvm()
+        jvm("desktop")
         androidTarget {
             publishLibraryVariants("release")
             @OptIn(ExperimentalKotlinGradlePluginApi::class)
@@ -51,10 +48,8 @@ fun Project.androidLibraryComposition() {
 //    linuxX64()
 
         sourceSets {
-            commonTest.configure {
-                dependencies{
-                    implementation(libs(KOTLIN_TEST))
-                }
+            commonTest.dependencies {
+                implementation(libs(KOTLIN_TEST))
             }
         }
     }
