@@ -1,5 +1,5 @@
 plugins {
-    id("multiplatform-compose")
+    id("multiplatform-compose-ui")
 }
 
 kotlin {

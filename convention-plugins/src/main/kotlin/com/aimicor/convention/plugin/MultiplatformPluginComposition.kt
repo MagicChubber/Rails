@@ -1,5 +1,6 @@
 package com.aimicor.convention.plugin
 
+import com.aimicor.convention.config.Libraries.KOTLIN_COROUTINES_TEST
 import com.aimicor.convention.config.Libraries.KOTLIN_TEST
 import com.aimicor.convention.config.Plugins.ANDROID_LIBRARY
 import com.aimicor.convention.config.Plugins.KOTLIN_MULTIPLATFORM
@@ -16,7 +17,6 @@ import com.aimicor.convention.extension.plugins
 import com.aimicor.convention.extension.versions
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 fun Project.multiplatformPluginComposition() {
@@ -33,7 +33,6 @@ fun Project.multiplatformPluginComposition() {
         jvm("desktop")
         androidTarget {
             publishLibraryVariants("release")
-            @OptIn(ExperimentalKotlinGradlePluginApi::class)
             compilerOptions {
                 jvmTarget.set(JvmTarget.valueOf(libs.versions(JVM_TARGET)))
             }
@@ -50,6 +49,7 @@ fun Project.multiplatformPluginComposition() {
         sourceSets {
             commonTest.dependencies {
                 implementation(libs(KOTLIN_TEST))
+                implementation(libs(KOTLIN_COROUTINES_TEST))
             }
         }
     }

@@ -17,6 +17,10 @@ gradlePlugin {
             id = "multiplatform-compose"
             implementationClass = "com.aimicor.convention.plugin.ComposeMultiplatformPlugin"
         }
+        register("multiplatform-compose-ui") {
+            id = "multiplatform-compose-ui"
+            implementationClass = "com.aimicor.convention.plugin.ComposeUiMultiplatformPlugin"
+        }
     }
 }
 

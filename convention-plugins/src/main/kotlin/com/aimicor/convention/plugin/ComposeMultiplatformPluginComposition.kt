@@ -22,29 +22,6 @@ fun Project.composeMultiplatformPluginComposition() {
         apply(libs.plugins(JETBRAINS_COMPOSE))
     }
 
-    kotlin {
-        sourceSets {
-            val desktopMain = getByName("desktopMain")
-
-            androidMain.dependencies {
-                implementation(compose.preview)
-                implementation(libs(PREVIEW))
-            }
-            commonMain.dependencies {
-                implementation(compose.runtime)
-                implementation(compose.foundation)
-                implementation(compose.material)
-                implementation(compose.ui)
-                implementation(compose.components.resources)
-                implementation(compose.components.uiToolingPreview)
-            }
-            desktopMain.dependencies {
-                implementation(libs(PREVIEW_DESKTOP))
-                implementation(compose.desktop.currentOs)
-            }
-        }
-    }
-
     compose.resources {
         publicResClass = false
         generateResClass = auto
