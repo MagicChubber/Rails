@@ -5,7 +5,7 @@ import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.usecas
 import com.aimicor.uniflow.UniflowViewModel
 import kotlinx.coroutines.launch
 
-internal class VideoRailsViewModel(
+class VideoRailsViewModel(
     val fetchRailsUseCase: FetchVideoRailsUseCase
 ) : VideoRailsUniflow, UniflowViewModel<VideoRailsEvent, VideoRailsUiState, VideoRailsSideEffect>(
     initialUiState = VideoRailsUiState.Loading

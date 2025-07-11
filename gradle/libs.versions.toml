@@ -2,15 +2,15 @@
 
 # Do not delete
 namespace = "com.aimicor.navcompose.typesafe"
-android-compileSdk = "34"
+android-compileSdk = "35"
 android-minSdk = "24"
-android-targetSdk = "34"
+android-targetSdk = "35"
 jvm-target = "JVM_11"
 java = "VERSION_11"
 android-kotlin-jvm = "11"
 
 lifecycleViewmodel = "2.8.4"
-agp = "8.3.2"
+agp = "8.6.0"
 kotlin = "2.1.20"
 coreKtx = "1.13.0"
 junit = "4.13.2"
@@ -31,7 +31,7 @@ androidx-test-junit = "1.2.1"
 kotlinx-coroutines-swing = "1.8.1"
 lifecycleRuntime = "2.8.7"
 coroutines-core = "1.10.1"
-koin = "3.4.0"
+koin = "4.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -57,6 +57,8 @@ androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-kt
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines-core"}
 coroutines-core-js = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core-js", version.ref = "coroutines-core"}
 koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" }
+koin-compose-viewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel", version.ref = "koin" }
+koin-compose-viewmodel-navigation = { group = "io.insert-koin", name = "koin-compose-viewmodel-navigation", version.ref = "koin" }
 koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
 koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
 android-tools-gradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }

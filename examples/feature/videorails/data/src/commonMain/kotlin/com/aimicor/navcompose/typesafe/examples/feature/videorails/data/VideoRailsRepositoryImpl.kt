@@ -3,9 +3,13 @@ package com.aimicor.navcompose.typesafe.examples.feature.videorails.data
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.entity.VideoRail
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.entity.VideoRailItem
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.repository.VideoRailsRepository
+import org.koin.core.module.dsl.bind
+import org.koin.core.module.dsl.factoryOf
+import org.koin.dsl.module
 
-operator fun VideoRailsRepository.Companion.invoke(): VideoRailsRepository =
-    VideoRailsRepositoryImpl()
+val videoRailsRepositoryModule = module {
+    factoryOf(::VideoRailsRepositoryImpl) { bind<VideoRailsRepository>() }
+}
 
 private class VideoRailsRepositoryImpl : VideoRailsRepository {
 

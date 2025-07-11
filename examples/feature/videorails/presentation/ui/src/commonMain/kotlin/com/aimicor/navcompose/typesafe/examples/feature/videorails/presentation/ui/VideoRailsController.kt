@@ -2,13 +2,14 @@ package com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import com.aimicor.collectcmp.collectAsStateWithCmp
-import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.state.VideoRailsUniflow
+import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.state.VideoRailsViewModel
+import org.koin.compose.viewmodel.koinViewModel
+import com.aimicor.collect.collectStateFlow
 
 @Composable
 fun VideoRailsController(
-    uniflow: VideoRailsUniflow
+    uniflow: VideoRailsViewModel = koinViewModel()
 ) {
-    val state by uniflow.uiState.collectAsStateWithCmp()
+    val state by uniflow.uiState.collectStateFlow()
     VideoRailsUiContent(state, uniflow::handleEvent)
 }
