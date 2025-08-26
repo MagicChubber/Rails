@@ -13,5 +13,9 @@ kotlin {
             implementation(project(":examples:feature:videorails:domain:usecase"))
             implementation(project(":examples:feature:videorails:domain:entity"))
         }
+
+//        commonTest.dependencies {
+//            implementation(libs.turbine)
+//        }
     }
 }

@@ -6,9 +6,11 @@ import com.aimicor.navcompose.typesafe.examples.feature.videorails.domain.usecas
 import com.aimicor.navcompose.typesafe.examples.feature.videorails.presentation.state.videoRailsStateModule
 import org.koin.core.KoinApplication
 import com.aimicor.collect.collectCommonModule
+import com.aimicor.navcompose.typesafe.examples.feature.videoplayer.domain.usecase.videoPlayerDomainModule
 
 fun KoinApplication.dependencies() {
     modules(
+        videoPlayerDomainModule,
         videoRailsStateModule,
         videoRailsUseCaseModule,
         videoRailsRepositoryModule,

@@ -2,5 +2,4 @@ package com.aimicor.navcompose.typesafe.examples.feature.videoplayer.domain.repo
 
 interface VideoPlayerRepository {
     suspend fun fetchVideoUrl(videoId: String): Result<String>
-    companion object
 }

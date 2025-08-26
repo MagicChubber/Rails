@@ -1,7 +1,7 @@
 package com.aimicor.uniflow
 
 import app.cash.turbine.test
-import com.aimicor.sunthumbs.infrastructure.test.TestCoroutineRule
+import com.aimicor.test.TestCoroutineRule
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull

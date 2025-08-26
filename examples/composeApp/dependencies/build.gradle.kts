@@ -7,6 +7,7 @@ kotlin{
             implementation(libs.koin.core)
             implementation(project(":examples:feature:videorails:data"))
             implementation(project(":examples:feature:videorails:domain:usecase"))
+            implementation(project(":examples:feature:videoplayer:domain:usecase"))
             implementation(project(":examples:feature:videorails:presentation:ui"))
             implementation(project(":examples:feature:videorails:presentation:state"))
             implementation(project(":examples:feature:videoplayer:data"))

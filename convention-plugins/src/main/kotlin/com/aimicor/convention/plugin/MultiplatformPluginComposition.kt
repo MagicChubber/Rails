@@ -2,6 +2,7 @@ package com.aimicor.convention.plugin
 
 import com.aimicor.convention.config.Libraries.KOTLIN_COROUTINES_TEST
 import com.aimicor.convention.config.Libraries.KOTLIN_TEST
+import com.aimicor.convention.config.Libraries.TURBINE
 import com.aimicor.convention.config.Plugins.ANDROID_LIBRARY
 import com.aimicor.convention.config.Plugins.KOTLIN_MULTIPLATFORM
 import com.aimicor.convention.config.Versions.COMPILE_SDK
@@ -50,6 +51,7 @@ fun Project.multiplatformPluginComposition() {
             commonTest.dependencies {
                 implementation(libs(KOTLIN_TEST))
                 implementation(libs(KOTLIN_COROUTINES_TEST))
+                implementation(libs(TURBINE))
             }
         }
     }
