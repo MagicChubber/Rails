@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.compose)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.serialization)
 }
 
 kotlin {
@@ -64,6 +65,8 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+            implementation(libs.serialization)
+            implementation(libs.navigation.compose)
             implementation(project(":examples:composeApp:dependencies"))
             implementation(project(":examples:feature:videorails:presentation:ui"))
             implementation(project(":examples:feature:videorails:presentation:state"))

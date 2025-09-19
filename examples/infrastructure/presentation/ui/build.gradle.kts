@@ -1,3 +1,3 @@
-plugins {
+0plugins {
     id("multiplatform-compose-ui")
 }
