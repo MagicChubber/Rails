@@ -21,23 +21,11 @@ fun VideoPlayerUiContent(
             items(
                 items = state.videos,
                 key = { item -> item.video.id }
-            ) { ShowVideoRailItem(it) }
+            ) {
+                ShowVideoRailItem(it) {
+                    event(VideoPlayerEvent.VideoSelected(it.video))
+                }
+            }
         }
     }
-//    Box(
-//        modifier = Modifier
-//            .fillMaxWidth()
-//            .aspectRatio(16f / 9f)
-//            .border(
-//                width = 1.dp,
-//                color = MaterialTheme.colors.onBackground,
-//            )
-//    ) {
-//        Text(
-//            text = state.,
-//            fontSize = MaterialTheme.typography.body1.fontSize,
-//            textAlign = TextAlign.Center,
-//            modifier = Modifier.align(Alignment.Center)
-//        )
-//    }
 }

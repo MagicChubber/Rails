@@ -2,21 +2,22 @@ package com.aimicor.typesafenavcompose.videoplayer.presentation.ui
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.aimicor.typesafenavcompose.presentation.ui.ShowLoading
-import com.aimicor.typesafenavcompose.videoplayer.presentation.state.VideoPlayerUiState
 import com.aimicor.typesafenavcompose.videoplayer.presentation.state.VideoPlayingState
-import com.aimicor.typesafenavcompose.videorails.domain.entity.VideoRailItem
 import navcompose.examples.feature.videoplayer.presentation.ui.generated.resources.Res
 import navcompose.examples.feature.videoplayer.presentation.ui.generated.resources.outline_error_24
 import org.jetbrains.compose.resources.painterResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 fun ShowVideoPlayer(
@@ -37,34 +38,19 @@ fun ShowVideoPlayer(
             VideoPlayingState.Fetching -> ShowLoading()
         }
     }
-
-//    Column {
-//        VideoPlayerUiContent(state, uniflow::handleEvent)
-//        Column(modifier = Modifier.padding(10.dp)) {
-//            Text(
-//                text = state.selectedVideo.video.title,
-//                fontSize = MaterialTheme.typography.h4.fontSize
-//            )
-//            Text(
-//                text = state.selectedVideo.video.description,
-//                fontSize = MaterialTheme.typography.body2.fontSize
-//            )
-//            LazyColumn(modifier = Modifier.padding(top = 10.dp)) {
-//                items(
-//                    items = state.videos,
-//                    key = { item -> item.id }
-//                ) { ShowVideoRailItem(it) }
-//            }
-//        }
-//    }
 }
 
 @Composable
-fun PlayVideo(videoUrl: String) {
-    TODO("Not yet implemented")
+fun BoxScope.PlayVideo(videoUrl: String) {
+    Text(videoUrl, modifier = Modifier.align(Alignment.Center))
 }
 
 @Composable
-fun ShowError() {
-    Icon(painterResource(Res.drawable.outline_error_24),  null)
+fun BoxScope.ShowError() {
+    Icon(
+        tint = MaterialTheme.colors.error,
+        modifier = Modifier.width(64.dp).align(Alignment.Center),
+        painter = painterResource(Res.drawable.outline_error_24),
+        contentDescription = null
+    )
 }

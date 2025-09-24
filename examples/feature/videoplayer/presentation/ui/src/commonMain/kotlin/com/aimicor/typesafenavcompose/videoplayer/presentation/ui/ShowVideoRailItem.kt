@@ -2,6 +2,7 @@ package com.aimicor.typesafenavcompose.videoplayer.presentation.ui
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
@@ -19,13 +20,18 @@ import com.aimicor.typesafenavcompose.presentation.ui.ShowImage
 import com.aimicor.typesafenavcompose.videoplayer.presentation.state.VideoItem
 
 @Composable
-fun ShowVideoRailItem(videoItem: VideoItem) {
+fun ShowVideoRailItem(
+    videoItem: VideoItem,
+    onSelect: (VideoItem) -> Unit
+) {
     Divider(
         color = MaterialTheme.colors.onSecondary,
         thickness = 1.dp,
         modifier = Modifier.padding(bottom = 5.dp)
     )
-    Row {
+    Row(
+        modifier = Modifier.clickable { onSelect(videoItem) }
+    ) {
         ShowImage(
             modifier = Modifier
                 .padding(bottom = 5.dp)
