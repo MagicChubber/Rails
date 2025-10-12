@@ -1,5 +1,6 @@
 package com.aimicor.typesafenavcompose.videoplayer.presentation.state
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
 import com.aimicor.typesafenavcompose.videoplayer.domain.usecase.FetchSelectedVideoUseCase
 import com.aimicor.typesafenavcompose.videorails.domain.entity.VideoRailItem
@@ -8,6 +9,7 @@ import kotlinx.coroutines.launch
 
 class VideoPlayerViewModel(
     private val fetchSelectedVideo: FetchSelectedVideoUseCase,
+    private val savedStateHandle: SavedStateHandle,
     private val playerInfo: VideoPlayerInfo
 ) : VideoPlayerUniflow,
     UniflowViewModel<VideoPlayerEvent, VideoPlayerUiState, VideoPlayerSideEffect>(
