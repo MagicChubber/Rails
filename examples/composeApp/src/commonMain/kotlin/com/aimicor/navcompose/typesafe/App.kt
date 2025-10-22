@@ -2,16 +2,16 @@ package com.aimicor.navcompose.typesafe
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.aimicor.typesafenavcompose.videoplayer.presentation.state.VideoPlayerInfo
+import com.aimicor.typesafenavcompose.videoplayer.presentation.ui.VideoPlayerController
 import com.aimicor.typesafenavcompose.videorails.presentation.ui.VideoRailsController
-import org.jetbrains.compose.ui.tooling.preview.Preview
 import kotlinx.serialization.Serializable
 
 @Serializable
-data object Home
+data object Rails
 
 @Composable
 fun App() {
@@ -19,9 +19,10 @@ fun App() {
     MaterialTheme {
         NavHost(
             navController = navController,
-            startDestination = Home
+            startDestination = Rails
         ) {
-            composable<Home> { VideoRailsController() }
+            composable<Rails> { VideoRailsController() }
+            composable<VideoPlayerInfo> { VideoPlayerController() }
         }
     }
 }

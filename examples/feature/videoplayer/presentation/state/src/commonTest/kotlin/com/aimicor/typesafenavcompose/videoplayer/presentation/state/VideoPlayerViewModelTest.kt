@@ -37,12 +37,12 @@ class VideoPlayerViewModelTest() {
         }
         VideoPlayerInfo(
             selectedVideoItem = videoList[initialSelect],
-            categoryList = videoList
+            videoRail = videoList
         )
     }
 
     private val output by lazy {
-        val expectedList = input.categoryList.map {
+        val expectedList = input.videoRail.map {
             VideoItem(video = it, selected = false)
         }.toMutableList()
         expectedList[initialSelect] = expectedList[initialSelect].copy(selected = true)
@@ -104,7 +104,7 @@ class VideoPlayerViewModelTest() {
             selectedVideoResultFlow.emit(Result.failure(Exception("error")))
             awaitItem()
 
-            sut.handleEvent(VideoPlayerEvent.VideoSelected(input.categoryList[selection]))
+            sut.handleEvent(VideoPlayerEvent.VideoSelected(input.videoRail[selection]))
 
             val videoList = output.videos.map { VideoItem(it.video, false) }.toMutableList()
             videoList[selection] = videoList[selection].copy(selected = true)
@@ -120,7 +120,7 @@ class VideoPlayerViewModelTest() {
                 awaitItem()
                 selectedVideoResultFlow.emit(Result.failure(Exception("error")))
                 awaitItem()
-                sut.handleEvent(VideoPlayerEvent.VideoSelected(input.categoryList[selection]))
+                sut.handleEvent(VideoPlayerEvent.VideoSelected(input.videoRail[selection]))
                 awaitItem()
 
                 selectedVideoResultFlow.emit(Result.failure(Exception("error")))
@@ -145,14 +145,14 @@ class VideoPlayerViewModelTest() {
                 awaitItem()
                 selectedVideoResultFlow.emit(Result.failure(Exception("error")))
                 awaitItem()
-                sut.handleEvent(VideoPlayerEvent.VideoSelected(input.categoryList[selection]))
+                sut.handleEvent(VideoPlayerEvent.VideoSelected(input.videoRail[selection]))
                 awaitItem()
 
                 selectedVideoResultFlow.emit(
                     Result.success(
                         SelectedVideo(
                             videoUrl,
-                            input.categoryList[selection]
+                            input.videoRail[selection]
                         )
                     )
                 )

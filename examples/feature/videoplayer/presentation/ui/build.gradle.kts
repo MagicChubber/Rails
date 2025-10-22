@@ -6,6 +6,7 @@ kotlin {
     sourceSets {
 
         commonMain.dependencies {
+            implementation(libs.koin.compose.viewmodel)
             implementation(project(":examples:feature:videorails:domain:entity"))
             implementation(project(":examples:feature:videoplayer:domain:entity"))
             implementation(project(":examples:feature:videoplayer:presentation:state"))

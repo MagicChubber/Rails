@@ -70,6 +70,8 @@ kotlin {
             implementation(project(":examples:composeApp:dependencies"))
             implementation(project(":examples:feature:videorails:presentation:ui"))
             implementation(project(":examples:feature:videorails:presentation:state"))
+            implementation(project(":examples:feature:videoplayer:presentation:ui"))
+            implementation(project(":examples:feature:videoplayer:presentation:state"))
             implementation(project(":examples:infrastructure:collect"))
         }
         desktopMain.dependencies {

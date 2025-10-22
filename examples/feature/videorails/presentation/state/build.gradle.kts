@@ -14,10 +14,7 @@ kotlin {
             implementation(project(":examples:infrastructure:uniflow"))
             implementation(project(":examples:feature:videorails:domain:usecase"))
             implementation(project(":examples:feature:videorails:domain:entity"))
+            implementation(project(":examples:feature:videoplayer:presentation:state"))
         }
-
-//        commonTest.dependencies {
-//            implementation(libs.turbine)
-//        }
     }
 }

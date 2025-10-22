@@ -14,7 +14,7 @@ class VideoPlayerViewModel(
 ) : VideoPlayerUniflow,
     UniflowViewModel<VideoPlayerEvent, VideoPlayerUiState, VideoPlayerSideEffect>(
         initialUiState = VideoPlayerUiState(
-            videos = playerInfo.categoryList.map {
+            videos = playerInfo.videoRail.items.map {
                 VideoItem(
                     video = it,
                     selected = it == playerInfo.selectedVideoItem
