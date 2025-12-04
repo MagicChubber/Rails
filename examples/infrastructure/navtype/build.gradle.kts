@@ -5,13 +5,13 @@ plugins {
 
 kotlin {
     sourceSets {
-//        androidMain {
-//            dependencies {
+        androidMain {
+            dependencies {
 //                implementation(libs.androidx.lifecycle.runtime)
 //                implementation(libs.androidx.runtime.compose)
 //                implementation(libs.koin.android)
-//            }
-//        }
+            }
+        }
         commonMain.dependencies {
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.navigation.compose)

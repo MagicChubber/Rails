@@ -15,6 +15,8 @@ kotlin {
             implementation(project(":examples:feature:videorails:domain:usecase"))
             implementation(project(":examples:feature:videorails:domain:entity"))
             implementation(project(":examples:feature:videoplayer:presentation:state"))
+            implementation(project(":examples:infrastructure:test"))
+            implementation(project(":examples:infrastructure:navtype"))
         }
     }
 }

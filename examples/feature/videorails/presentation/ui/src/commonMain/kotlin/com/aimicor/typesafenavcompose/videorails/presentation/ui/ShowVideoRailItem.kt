@@ -35,7 +35,7 @@ fun ShowVideoRailItem(
             .clickable(
                 onClick = { itemSelected() },
                 indication = LocalIndication.current, // Explicitly provide the current indication
-                interactionSource = interactionSource // Provide the interaction source
+                interactionSource = remember { MutableInteractionSource() },
             )
     ) {
         ShowImage(

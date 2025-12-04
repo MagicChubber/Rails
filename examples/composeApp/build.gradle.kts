@@ -52,12 +52,17 @@ kotlin {
 
     sourceSets {
         val desktopMain by getting
-        
+
         androidMain.dependencies {
+            implementation(project.dependencies.platform(libs.androidx.compose.bom))
+            implementation(libs.androidx.compose.ui)
+            implementation(libs.androidx.compose.material)
+            implementation(libs.androidx.compose.foundation)
+            implementation(libs.androidx.compose.ui.tooling.preview)
+
             implementation(libs.koin.android)
-            implementation(compose.preview)
-            implementation(libs.androidx.activity.compose)
         }
+
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -73,6 +78,7 @@ kotlin {
             implementation(project(":examples:feature:videoplayer:presentation:ui"))
             implementation(project(":examples:feature:videoplayer:presentation:state"))
             implementation(project(":examples:infrastructure:collect"))
+            implementation(project(":examples:infrastructure:navtype"))
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

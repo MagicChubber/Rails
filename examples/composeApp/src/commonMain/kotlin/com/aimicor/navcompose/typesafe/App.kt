@@ -21,8 +21,8 @@ fun App() {
             navController = navController,
             startDestination = Rails
         ) {
-            composable<Rails> { VideoRailsController() }
-            composable<VideoPlayerInfo> { VideoPlayerController() }
+            composable<Rails> { VideoRailsController() { navController.navigate(it) } }
+            composable<VideoPlayerInfo>(VideoPlayerInfo.typeMap) { VideoPlayerController() }
         }
     }
 }

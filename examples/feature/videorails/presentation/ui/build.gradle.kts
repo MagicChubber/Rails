@@ -11,10 +11,10 @@ kotlin {
 
         commonMain.dependencies {
             implementation(libs.koin.compose.viewmodel)
-            implementation(libs.navigation.compose)
             implementation(project(":examples:infrastructure:uniflow"))
             implementation(project(":examples:feature:videorails:domain:entity"))
             implementation(project(":examples:feature:videorails:presentation:state"))
+            implementation(project(":examples:feature:videoplayer:presentation:state"))
             implementation(project(":examples:infrastructure:presentation:ui"))
             implementation(project(":examples:infrastructure:collect"))
         }
