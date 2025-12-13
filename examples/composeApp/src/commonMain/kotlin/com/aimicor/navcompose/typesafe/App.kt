@@ -26,15 +26,3 @@ fun App() {
         }
     }
 }
-
-//NavHost(
-//modifier = Modifier.padding(innerPadding),
-//navController = scaffoldNavController,
-//startDestination = NavRoute(
-//title = stringResource(R.string.home),
-//selectedVideo = homeVideoSelect,
-//videoList = homeVideoList
-//)
-//) {
-//    composable<NavRoute>(navRouteTypes) { ScreenContent() }
-//}
