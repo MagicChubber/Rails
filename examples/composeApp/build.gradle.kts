@@ -45,6 +45,7 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "ComposeApp"
             isStatic = true
+//            export(project(":examples:composeApp:dependencies"))
         }
     }
 
@@ -72,6 +73,7 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.serialization)
             implementation(libs.navigation.compose)
+            implementation(libs.koin.core)
             implementation(project(":examples:composeApp:dependencies"))
             implementation(project(":examples:feature:videorails:presentation:ui"))
             implementation(project(":examples:feature:videorails:presentation:state"))
@@ -83,6 +85,13 @@ kotlin {
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
         }
+
+//        val iosMain by creating {
+//            dependsOn(commonMain.get())
+//        }
+//        val iosX64Main by getting { dependsOn(iosMain) }
+//        val iosArm64Main by getting { dependsOn(iosMain) }
+//        val iosSimulatorArm64Main by getting { dependsOn(iosMain) }
     }
 }
 

@@ -18,6 +18,7 @@ import com.aimicor.convention.extension.plugins
 import com.aimicor.convention.extension.versions
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 fun Project.multiplatformPluginComposition() {
@@ -28,24 +29,18 @@ fun Project.multiplatformPluginComposition() {
     }
 
     kotlin {
-        //@OptIn(ExperimentalWasmDsl::class)
-        //wasmJs()
-
         jvm("desktop")
         androidTarget {
             publishLibraryVariants("release")
+            @OptIn(ExperimentalKotlinGradlePluginApi::class)
             compilerOptions {
                 jvmTarget.set(JvmTarget.valueOf(libs.versions(JVM_TARGET)))
             }
         }
-
-        js(IR) {
-            browser()
-        }
         iosX64()
         iosArm64()
         iosSimulatorArm64()
-//    linuxX64()
+//        linuxX64()
 
         sourceSets {
             commonTest.dependencies {

@@ -1,8 +1,10 @@
 package com.aimicor.typesafenavcompose.videoplayer.presentation.state
 
+import androidx.lifecycle.SavedStateHandle
 import app.cash.turbine.test
 import com.aimicor.typesafenavcompose.videoplayer.domain.entity.SelectedVideo
 import com.aimicor.typesafenavcompose.videoplayer.domain.usecase.FetchSelectedVideoUseCase
+import com.aimicor.typesafenavcompose.videorails.domain.entity.VideoRail
 import com.aimicor.typesafenavcompose.videorails.domain.entity.VideoRailItem
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.first
@@ -37,20 +39,25 @@ class VideoPlayerViewModelTest() {
         }
         VideoPlayerInfo(
             selectedVideoItem = videoList[initialSelect],
-            videoRail = videoList
+            videoRail = VideoRail("",videoList)
         )
     }
 
     private val output by lazy {
-        val expectedList = input.videoRail.map {
+        val expectedList = input.videoRail.items.map {
             VideoItem(video = it, selected = false)
         }.toMutableList()
         expectedList[initialSelect] = expectedList[initialSelect].copy(selected = true)
         VideoPlayerUiState(expectedList, VideoPlayingState.Fetching)
     }
 
+    private val savedStateHandle = SavedStateHandle().apply {
+        set("input", input)
+    }
+
+
     private val sut by lazy {
-        VideoPlayerViewModel(fetchSelectedVideoUseCase, input)
+        VideoPlayerViewModel(fetchSelectedVideoUseCase, savedStateHandle)
     }
 
     @Test
@@ -104,7 +111,7 @@ class VideoPlayerViewModelTest() {
             selectedVideoResultFlow.emit(Result.failure(Exception("error")))
             awaitItem()
 
-            sut.handleEvent(VideoPlayerEvent.VideoSelected(input.videoRail[selection]))
+            sut.handleEvent(VideoPlayerEvent.VideoSelected(input.videoRail.items[selection]))
 
             val videoList = output.videos.map { VideoItem(it.video, false) }.toMutableList()
             videoList[selection] = videoList[selection].copy(selected = true)
@@ -120,7 +127,7 @@ class VideoPlayerViewModelTest() {
                 awaitItem()
                 selectedVideoResultFlow.emit(Result.failure(Exception("error")))
                 awaitItem()
-                sut.handleEvent(VideoPlayerEvent.VideoSelected(input.videoRail[selection]))
+                sut.handleEvent(VideoPlayerEvent.VideoSelected(input.videoRail.items[selection]))
                 awaitItem()
 
                 selectedVideoResultFlow.emit(Result.failure(Exception("error")))
@@ -145,14 +152,14 @@ class VideoPlayerViewModelTest() {
                 awaitItem()
                 selectedVideoResultFlow.emit(Result.failure(Exception("error")))
                 awaitItem()
-                sut.handleEvent(VideoPlayerEvent.VideoSelected(input.videoRail[selection]))
+                sut.handleEvent(VideoPlayerEvent.VideoSelected(input.videoRail.items[selection]))
                 awaitItem()
 
                 selectedVideoResultFlow.emit(
                     Result.success(
                         SelectedVideo(
                             videoUrl,
-                            input.videoRail[selection]
+                            input.videoRail.items[selection]
                         )
                     )
                 )
