@@ -27,7 +27,8 @@ fun Project.multiplatformPluginComposition() {
         apply(libs.plugins(KOTLIN_MULTIPLATFORM))
     }
 
-    group = libs.versions(LIBRARY_GROUP)
+    // make library pseudo-external for ios
+    group = "${libs.versions(LIBRARY_GROUP)}.${path.split(":").drop(2).joinToString(".")}"
     version = libs.versions(LIBRARY_VERSION)
 
     val compileSdkVersion = libs.versions(COMPILE_SDK).toInt()
@@ -43,6 +44,9 @@ fun Project.multiplatformPluginComposition() {
             compileSdk = compileSdkVersion
             minSdk = minSdkVersion
             withJava()
+            androidResources {
+                enable = true
+            }
             withHostTestBuilder {}.configure {}
             withDeviceTestBuilder {
                 sourceSetTreeName = "test"

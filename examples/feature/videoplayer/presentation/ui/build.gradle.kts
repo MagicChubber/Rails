@@ -3,13 +3,13 @@ plugins {
 }
 
 kotlin {
+    android {
+        namespace = "com.aimicor.navcompose.typesafe.feature.videoplayer.presentation.ui"
+    }
     sourceSets {
-
         androidMain.dependencies {
             implementation(project(":examples:infrastructure:collect"))
-
         }
-
         commonMain.dependencies {
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.navigation.compose)
@@ -18,6 +18,7 @@ kotlin {
             implementation(project(":examples:feature:videoplayer:domain:entity"))
             implementation(project(":examples:feature:videoplayer:presentation:state"))
             implementation(project(":examples:infrastructure:presentation:ui"))
-            implementation(project(":examples:infrastructure:collect"))        }
+            implementation(project(":examples:infrastructure:collect"))
+        }
     }
 }

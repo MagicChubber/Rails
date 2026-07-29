@@ -6,9 +6,9 @@ import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,7 +29,7 @@ fun ShowVideoPlayer(
             .aspectRatio(16f / 9f)
             .border(
                 width = 1.dp,
-                color = MaterialTheme.colors.onBackground,
+                color = MaterialTheme.colorScheme.onBackground,
             )
     ) {
         when (state) {
@@ -48,7 +48,7 @@ fun BoxScope.PlayVideo(videoUrl: String) {
 @Composable
 fun BoxScope.ShowError() {
     Icon(
-        tint = MaterialTheme.colors.error,
+        tint = MaterialTheme.colorScheme.error,
         modifier = Modifier.width(64.dp).align(Alignment.Center),
         painter = painterResource(Res.drawable.outline_error_24),
         contentDescription = null

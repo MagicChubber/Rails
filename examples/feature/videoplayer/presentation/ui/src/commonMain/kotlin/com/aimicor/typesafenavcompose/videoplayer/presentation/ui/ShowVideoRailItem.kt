@@ -7,9 +7,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,8 +24,8 @@ fun ShowVideoRailItem(
     videoItem: VideoItem,
     onSelect: (VideoItem) -> Unit
 ) {
-    Divider(
-        color = MaterialTheme.colors.onSecondary,
+    HorizontalDivider(
+        color = MaterialTheme.colorScheme.onSecondary,
         thickness = 1.dp,
         modifier = Modifier.padding(bottom = 5.dp)
     )
@@ -36,7 +36,7 @@ fun ShowVideoRailItem(
             modifier = Modifier
                 .padding(bottom = 5.dp)
                 .height(40.dp)
-                .border(BorderStroke(1.dp, MaterialTheme.colors.onBackground)),
+                .border(BorderStroke(1.dp, MaterialTheme.colorScheme.onBackground)),
         )
         Column(
             modifier = Modifier

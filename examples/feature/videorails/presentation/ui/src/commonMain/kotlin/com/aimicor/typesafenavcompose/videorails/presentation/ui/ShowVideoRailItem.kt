@@ -9,8 +9,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -19,7 +19,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.aimicor.typesafenavcompose.videorails.domain.entity.VideoRailItem
 import com.aimicor.typesafenavcompose.presentation.ui.ShowImage
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun ShowVideoRailItem(
@@ -27,14 +27,14 @@ fun ShowVideoRailItem(
     videoItem: VideoRailItem,
     itemSelected: () -> Unit
 ) {
-    val interactionSource = remember { MutableInteractionSource() } // Create an interaction source
+    val interactionSource = remember { MutableInteractionSource() }
 
     Column(
         modifier = modifier
             .width(160.dp)
             .clickable(
                 onClick = { itemSelected() },
-                indication = LocalIndication.current, // Explicitly provide the current indication
+                indication = LocalIndication.current,
                 interactionSource = remember { MutableInteractionSource() },
             )
     ) {
@@ -42,7 +42,7 @@ fun ShowVideoRailItem(
             modifier = Modifier
                 .height(90.dp)
                 .fillMaxWidth()
-                .border(BorderStroke(1.dp, MaterialTheme.colors.onBackground)),
+                .border(BorderStroke(1.dp, MaterialTheme.colorScheme.onBackground)),
         )
         Text(
             text = videoItem.title,

@@ -4,26 +4,17 @@ plugins {
 }
 
 kotlin {
+    android {
+        namespace = "com.aimicor.navcompose.typesafe.infrastructure.navtype"
+    }
     sourceSets {
-        androidMain {
-            dependencies {
-//                implementation(libs.androidx.lifecycle.runtime)
-//                implementation(libs.androidx.runtime.compose)
-//                implementation(libs.koin.android)
-            }
-        }
         commonMain.dependencies {
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.navigation.compose)
-            implementation(libs.kotlinx.serialization.json)
             implementation(libs.urlencoder.lib)
-//                implementation(compose.runtime)
-//                implementation(libs.coroutines.core)
-//                implementation(libs.koin.core)
-//            }
+        }
+        commonTest.dependencies {
+            implementation(libs.junit)
         }
     }
-}
-dependencies {
-    testImplementation(libs.junit.jupiter)
 }

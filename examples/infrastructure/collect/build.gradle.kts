@@ -3,20 +3,19 @@ plugins {
 }
 
 kotlin {
+    android {
+        namespace = "com.aimicor.navcompose.typesafe.infrastructure.collect"
+    }
     sourceSets {
-        androidMain {
-            dependencies {
-                implementation(libs.androidx.lifecycle.runtime)
-                implementation(libs.androidx.runtime.compose)
-                implementation(libs.koin.android)
-            }
+        androidMain.dependencies {
+            implementation(libs.androidx.lifecycle.runtime)
+            implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(libs.koin.android)
         }
-        val commonMain by getting {
-            dependencies {
-                implementation(compose.runtime)
-                implementation(libs.coroutines.core)
-                implementation(libs.koin.core)
-            }
+        commonMain.dependencies {
+            implementation(libs.compose.runtime)
+            implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.koin.core)
         }
     }
 }

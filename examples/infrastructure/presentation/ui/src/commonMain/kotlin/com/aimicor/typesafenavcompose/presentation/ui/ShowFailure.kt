@@ -5,11 +5,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.Button
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -24,7 +24,7 @@ import navcompose.examples.infrastructure.presentation.ui.generated.resources.er
 import navcompose.examples.infrastructure.presentation.ui.generated.resources.retry
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
-import org.jetbrains.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun ShowFailure(
@@ -36,7 +36,7 @@ fun ShowFailure(
         IconButton(onClick = { onClose()}) {
             Icon(
                 painter = painterResource(Res.drawable.baseline_close_24),
-                tint = MaterialTheme.colors.onBackground,
+                tint = MaterialTheme.colorScheme.onBackground,
                 contentDescription = null
             )
         }
@@ -46,7 +46,7 @@ fun ShowFailure(
         ) {
             Text(
                 text = stringResource(Res.string.error),
-                color = MaterialTheme.colors.onBackground,
+                color = MaterialTheme.colorScheme.onBackground,
                 fontSize = 20.sp
             )
             Icon(
@@ -57,7 +57,7 @@ fun ShowFailure(
             )
             Text(
                 modifier = Modifier.width(200.dp),
-                color = MaterialTheme.colors.onBackground,
+                color = MaterialTheme.colorScheme.onBackground,
                 text = message,
                 fontSize = 10.sp,
                 textAlign = TextAlign.Center

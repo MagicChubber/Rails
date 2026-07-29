@@ -1,10 +1,11 @@
-package com.aimicor.navcompose.typesafe
+package com.aimicor.navcompose.typesafe.android
 
 import android.app.Application
 import com.aimicor.collect.collectAndroidModule
+import com.aimicor.navcompose.typesafe.initKoin
 import org.koin.android.ext.koin.androidContext
 
-class VideoApplication : Application(){
+class VideoApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

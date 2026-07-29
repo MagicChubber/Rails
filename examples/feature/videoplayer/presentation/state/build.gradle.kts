@@ -4,12 +4,10 @@ plugins {
 }
 
 kotlin {
+    android {
+        namespace = "com.aimicor.navcompose.typesafe.feature.videoplayer.presentation.state"
+    }
     sourceSets {
-         androidMain.dependencies {
-             implementation(libs.androidx.lifecycle.viewmodel.compose)
-            implementation(libs.androidx.lifecycle.viewmodel)
-        }
-
         commonMain.dependencies {
             implementation(libs.koin.core)
             implementation(libs.koin.compose.viewmodel)

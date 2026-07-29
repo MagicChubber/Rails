@@ -3,11 +3,12 @@ plugins {
 }
 
 kotlin {
+    android {
+        namespace = "com.aimicor.navcompose.typesafe.feature.videoplayer.domain.repository"
+    }
     sourceSets {
-        val commonMain by getting {
-            dependencies {
-                implementation(project(":examples:feature:videorails:domain:entity"))
-            }
+        commonMain.dependencies {
+            implementation(project(":examples:feature:videorails:domain:entity"))
         }
     }
 }

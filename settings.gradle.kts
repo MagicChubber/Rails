@@ -1,28 +1,8 @@
-//pluginManagement {
-//    repositories {
-//        google {
-//            content {
-//                includeGroupByRegex("com\\.android.*")
-//                includeGroupByRegex("com\\.google.*")
-//                includeGroupByRegex("androidx.*")
-//            }
-//        }
-//        mavenCentral()
-//        gradlePluginPortal()
-//    }
-//}
-//dependencyResolutionManagement {
-//    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-//    repositories {
-//        google()
-//        mavenCentral()
-//    }
-//}
-
 rootProject.name = "navcompose"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
+    includeBuild("convention-plugins2")
     repositories {
         google {
             mavenContent {
@@ -53,8 +33,6 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
 }
 
-includeBuild("convention-plugins")
-
 include(":examples:feature:videorails:domain:entity")
 include(":examples:feature:videorails:domain:repository")
 include(":examples:feature:videoplayer:domain:repository")
@@ -67,11 +45,11 @@ include(":examples:feature:videorails:presentation:ui")
 include(":examples:feature:videoplayer:presentation:state")
 include(":examples:feature:videoplayer:presentation:ui")
 include(":examples:feature:videoplayer:domain:entity")
-include(":examples:infrastructure:presentation:state")
 include(":examples:infrastructure:presentation:ui")
 include(":examples:infrastructure:navtype")
 include(":examples:infrastructure:test")
 include(":examples:infrastructure:uniflow")
 include(":examples:composeApp")
 include(":examples:composeApp:dependencies")
+include(":examples:androidApp")
 include(":examples:infrastructure:collect")

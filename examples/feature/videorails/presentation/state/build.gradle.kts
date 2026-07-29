@@ -4,8 +4,10 @@ plugins {
 }
 
 kotlin {
+    android {
+        namespace = "com.aimicor.navcompose.typesafe.feature.videorails.presentation.state"
+    }
     sourceSets {
-
         commonMain.dependencies {
             implementation(libs.koin.core)
             implementation(libs.koin.compose.viewmodel)
