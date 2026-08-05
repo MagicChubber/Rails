@@ -43,16 +43,4 @@ fun Project.composeAppMultiplatformPluginComposition() {
             }
         }
     }
-
-    // Workaround: android.kotlin.multiplatform.library (AGP 9) doesn't expose assets source
-    // sets on variants, so CMP's CopyResourcesToAndroidAssetsTask.outputDirectory is never
-    // set. Wire outputDirectory via reflection so the task can run and produce its output.
-    afterEvaluate {
-        tasks.named("copyAndroidMainComposeResourcesToAndroidAssets").configure {
-            val outDir = layout.buildDirectory.dir("generated/compose/assets/androidMain")
-            @Suppress("UNCHECKED_CAST")
-            (javaClass.methods.first { it.name == "getOutputDirectory" }.invoke(this)
-                    as org.gradle.api.file.DirectoryProperty).set(outDir)
-        }
-    }
 }
