@@ -2,7 +2,7 @@ import SwiftUI
 import ComposeApp
 
 @main
-struct iOSApp: App {
+struct TypesafeApp: App {
     init() {
          DependenciesKt.doInitKoinIos()
     }

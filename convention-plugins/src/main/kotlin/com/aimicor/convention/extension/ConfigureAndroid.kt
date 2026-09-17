@@ -1,8 +1,8 @@
 package com.aimicor.convention.extension
 
-import com.android.build.gradle.LibraryExtension
-import org.gradle.api.Project
-import org.gradle.kotlin.dsl.getByType
+import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
-fun Project.android(configure: LibraryExtension.() -> Unit) =
-    extensions.getByType<LibraryExtension>().apply(configure)
+internal fun KotlinMultiplatformExtension.android(
+    configure: KotlinMultiplatformAndroidLibraryTarget.() -> Unit
+) = targets.withType(KotlinMultiplatformAndroidLibraryTarget::class.java).configureEach(configure)

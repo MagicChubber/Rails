@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.`kotlin-dsl`
+
 plugins {
     `kotlin-dsl`
 }
@@ -9,6 +11,10 @@ repositories {
 
 gradlePlugin {
     plugins {
+        register("android-app") {
+            id = "android-app"
+            implementationClass = "com.aimicor.convention.plugin.AndroidAppPlugin"
+        }
         register("multiplatform-kotlin") {
             id = "multiplatform-kotlin"
             implementationClass = "com.aimicor.convention.plugin.MultiplatformPlugin"
@@ -21,12 +27,17 @@ gradlePlugin {
             id = "multiplatform-compose-ui"
             implementationClass = "com.aimicor.convention.plugin.ComposeUiMultiplatformPlugin"
         }
+        register("multiplatform-compose-app") {
+            id = "multiplatform-compose-app"
+            implementationClass = "com.aimicor.convention.plugin.ComposeAppMultiplatformPlugin"
+        }
     }
 }
 
 dependencies {
     compileOnly(gradleApi())
     compileOnly(libs.android.tools.gradle)
+    compileOnly(libs.android.tools.gradle.api)
     compileOnly(libs.kotlin.gradle.plugin)
     implementation(libs.compose.gradle.plugin)
     implementation(kotlin("stdlib"))

@@ -5,6 +5,7 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 import org.gradle.kotlin.dsl.getByType
 import org.jetbrains.compose.ComposeExtension
 import org.jetbrains.compose.ComposePlugin
+import org.jetbrains.compose.desktop.DesktopExtension
 import org.jetbrains.compose.resources.ResourcesExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
@@ -19,3 +20,6 @@ internal val Project.compose: ComposeExtension
 
 internal fun ComposeExtension.resources(configure: ResourcesExtension.() -> Unit) =
     extensions.getByType<ResourcesExtension>().apply(configure)
+
+fun ComposeExtension.desktop(configure: DesktopExtension.() -> Unit) =
+    extensions.getByType<DesktopExtension>().apply(configure)

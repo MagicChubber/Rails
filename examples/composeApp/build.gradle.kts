@@ -5,21 +5,21 @@ plugins {
     alias(libs.plugins.serialization)
 }
 
+androidConfig {
+    nameSpace = "com.aimicor.navcompose.typesafe"
+}
+
+iosConfig {
+    baseName = "ComposeApp"
+}
+
+desktopConfig {}
+
+jsConfig {}
+
+wasmJsConfig {}
+
 kotlin {
-    android {
-        namespace = "com.aimicor.navcompose.typesafe"
-    }
-
-    listOf(
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach { iosTarget ->
-        iosTarget.binaries.framework {
-            baseName = "ComposeApp"
-            isStatic = true
-        }
-    }
-
     sourceSets {
         commonMain.dependencies {
             implementation(libs.serialization)

@@ -12,7 +12,7 @@
 
 /* Begin PBXFileReference section */
 		230D84312F8A7495000BC507 /* ComposeApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ComposeApp.framework; path = "../composeApp/build/bin/iosSimulatorArm64/debugFramework/ComposeApp.framework"; sourceTree = "<group>"; };
-		23265FDA2F25199800811A5D /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		23265FDA2F25199800811A5D /* typesafeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = typesafeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -21,17 +21,17 @@
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 23265FD92F25199800811A5D /* iosApp */;
+			target = 23265FD92F25199800811A5D /* typesafeApp */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		23265FDC2F25199800811A5D /* iosApp */ = {
+		23265FDC2F25199800811A5D /* typesafeApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				230D84192F8A6842000BC507 /* PBXFileSystemSynchronizedBuildFileExceptionSet */,
 			);
-			path = iosApp;
+			path = typesafeApp;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -59,7 +59,7 @@
 		23265FD12F25199800811A5D = {
 			isa = PBXGroup;
 			children = (
-				23265FDC2F25199800811A5D /* iosApp */,
+				23265FDC2F25199800811A5D /* typesafeApp */,
 				231E36942F35F0D100CC79AE /* Frameworks */,
 				23265FDB2F25199800811A5D /* Products */,
 			);
@@ -68,7 +68,7 @@
 		23265FDB2F25199800811A5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				23265FDA2F25199800811A5D /* iosApp.app */,
+				23265FDA2F25199800811A5D /* typesafeApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,9 +76,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		23265FD92F25199800811A5D /* iosApp */ = {
+		23265FD92F25199800811A5D /* typesafeApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 23265FE52F25199900811A5D /* Build configuration list for PBXNativeTarget "iosApp" */;
+			buildConfigurationList = 23265FE52F25199900811A5D /* Build configuration list for PBXNativeTarget "typesafeApp" */;
 			buildPhases = (
 				230D83D32F88F20D000BC507 /* Compile Kotlin Framework */,
 				23265FD62F25199800811A5D /* Sources */,
@@ -90,13 +90,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				23265FDC2F25199800811A5D /* iosApp */,
+				23265FDC2F25199800811A5D /* typesafeApp */,
 			);
-			name = iosApp;
+			name = typesafeApp;
 			packageProductDependencies = (
 			);
-			productName = iosApp;
-			productReference = 23265FDA2F25199800811A5D /* iosApp.app */;
+			productName = typesafeApp;
+			productReference = 23265FDA2F25199800811A5D /* typesafeApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +114,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 23265FD52F25199800811A5D /* Build configuration list for PBXProject "iosApp" */;
+			buildConfigurationList = 23265FD52F25199800811A5D /* Build configuration list for PBXProject "typesafeApp" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -128,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				23265FD92F25199800811A5D /* iosApp */,
+				23265FD92F25199800811A5D /* typesafeApp */,
 			);
 		};
 /* End PBXProject section */
@@ -162,7 +162,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "REPO_ROOT=\"$SRCROOT/../..\"\n\"$REPO_ROOT/gradlew\" \\\n    --project-dir \"$REPO_ROOT\" \\\n    :examples:composeApp:embedAndSignAppleFrameworkForXcode \\\n    -Pkotlin.native.cocoapods.platform=$PLATFORM_NAME \\\n    -Pkotlin.native.cocoapods.archs=\"$ARCHS\" \\\n    -Pkotlin.native.cocoapods.configuration=$CONFIGURATION\n";
+			shellScript = "cd \"$SRCROOT/../..\"\n./gradlew :examples:composeApp:embedAndSignAppleFrameworkForXcode\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -310,13 +310,13 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../composeApp/build/bin/iosSimulatorArm64/debugFramework";
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = iosApp/Info.plist;
+				INFOPLIST_FILE = typesafeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aimicor.navcompose.typesafe.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aimicor.navcompose.typesafe.typesafeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -339,13 +339,13 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../composeApp/build/bin/iosSimulatorArm64/debugFramework";
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = iosApp/Info.plist;
+				INFOPLIST_FILE = typesafeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.aimicor.navcompose.typesafe.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aimicor.navcompose.typesafe.typesafeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -360,7 +360,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		23265FD52F25199800811A5D /* Build configuration list for PBXProject "iosApp" */ = {
+		23265FD52F25199800811A5D /* Build configuration list for PBXProject "typesafeApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				23265FE32F25199900811A5D /* Debug */,
@@ -369,7 +369,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		23265FE52F25199900811A5D /* Build configuration list for PBXNativeTarget "iosApp" */ = {
+		23265FE52F25199900811A5D /* Build configuration list for PBXNativeTarget "typesafeApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				23265FE62F25199900811A5D /* Debug */,

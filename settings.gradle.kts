@@ -2,7 +2,7 @@ rootProject.name = "navcompose"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
-    includeBuild("convention-plugins2")
+    includeBuild("convention-plugins")
     repositories {
         google {
             mavenContent {
