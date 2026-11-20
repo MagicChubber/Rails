@@ -7,8 +7,6 @@ import com.aimicor.collect.collectStateFlow
 import com.aimicor.typesafenavcompose.videoplayer.presentation.state.VideoPlayerInfo
 import com.aimicor.typesafenavcompose.videorails.presentation.state.VideoRailsSideEffect
 import com.aimicor.typesafenavcompose.videorails.presentation.state.VideoRailsUniflow
-import com.aimicor.typesafenavcompose.videorails.presentation.state.VideoRailsViewModel
-import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun VideoRailsController(

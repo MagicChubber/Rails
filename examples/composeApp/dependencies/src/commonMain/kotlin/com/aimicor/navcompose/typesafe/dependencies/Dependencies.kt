@@ -8,12 +8,12 @@ import com.aimicor.typesafenavcompose.videoplayer.presentation.ui.videoPlayerUiM
 import com.aimicor.typesafenavcompose.videorails.data.videoRailsRepositoryModule
 import com.aimicor.typesafenavcompose.videorails.domain.usecase.videoRailsUseCaseModule
 import com.aimicor.typesafenavcompose.videorails.presentation.state.videoRailsStateModule
-import com.aimicor.typesafenavcompose.videorails.presentation.ui.videoRailsUiDi
+import com.aimicor.typesafenavcompose.videorails.presentation.ui.videoRailsUiModule
 import org.koin.core.KoinApplication
 
 fun KoinApplication.dependencies() {
     modules(
-        videoRailsUiDi,
+        videoRailsUiModule,
         videoPlayerDomainModule,
         videoRailsStateModule,
         videoPlayerStateModule,

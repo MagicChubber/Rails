@@ -25,14 +25,7 @@ kotlin {
             implementation(libs.nav3)
             implementation(libs.koin.compose.nav3)
             implementation(libs.serialization)
-            implementation(libs.navigation.compose)
             implementation(project(":examples:composeApp:dependencies"))
-            implementation(project(":examples:feature:videorails:presentation:ui"))
-            implementation(project(":examples:feature:videorails:presentation:state"))
-            implementation(project(":examples:feature:videoplayer:presentation:ui"))
-            implementation(project(":examples:feature:videoplayer:presentation:state"))
-            implementation(project(":examples:infrastructure:collect"))
-            implementation(project(":examples:infrastructure:navtype"))
         }
     }
 }

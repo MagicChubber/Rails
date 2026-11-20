@@ -4,10 +4,12 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import com.aimicor.typesafenavcompose.videorails.presentation.state.VideoRailsViewModel
 import org.koin.compose.viewmodel.koinViewModel
+import org.koin.core.annotation.KoinExperimentalAPI
 import org.koin.dsl.module
 import org.koin.dsl.navigation3.navigation
 
-val videoRailsUiDi = module {
+@OptIn(KoinExperimentalAPI::class)
+val videoRailsUiModule = module {
     single<SnapshotStateList<Any>> { mutableStateListOf(VideoRails) }
 
     navigation<VideoRails> {

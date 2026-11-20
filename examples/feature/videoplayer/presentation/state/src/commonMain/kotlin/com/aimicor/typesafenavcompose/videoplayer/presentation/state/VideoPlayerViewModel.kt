@@ -1,8 +1,6 @@
 package com.aimicor.typesafenavcompose.videoplayer.presentation.state
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.viewModelScope
-import androidx.navigation.toRoute
 import com.aimicor.typesafenavcompose.videoplayer.domain.usecase.FetchSelectedVideoUseCase
 import com.aimicor.typesafenavcompose.videorails.domain.entity.VideoRailItem
 import com.aimicor.uniflow.UniflowViewModel
