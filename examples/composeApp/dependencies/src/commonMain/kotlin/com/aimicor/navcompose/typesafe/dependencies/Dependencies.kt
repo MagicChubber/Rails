@@ -4,16 +4,20 @@ import com.aimicor.collect.collectCommonModule
 import com.aimicor.typesafenavcompose.videoplayer.data.videoPlayerRepositoryModule
 import com.aimicor.typesafenavcompose.videoplayer.domain.usecase.videoPlayerDomainModule
 import com.aimicor.typesafenavcompose.videoplayer.presentation.state.videoPlayerStateModule
+import com.aimicor.typesafenavcompose.videoplayer.presentation.ui.videoPlayerUiModule
 import com.aimicor.typesafenavcompose.videorails.data.videoRailsRepositoryModule
 import com.aimicor.typesafenavcompose.videorails.domain.usecase.videoRailsUseCaseModule
 import com.aimicor.typesafenavcompose.videorails.presentation.state.videoRailsStateModule
+import com.aimicor.typesafenavcompose.videorails.presentation.ui.videoRailsUiDi
 import org.koin.core.KoinApplication
 
 fun KoinApplication.dependencies() {
     modules(
+        videoRailsUiDi,
         videoPlayerDomainModule,
         videoRailsStateModule,
         videoPlayerStateModule,
+        videoPlayerUiModule,
         videoRailsUseCaseModule,
         videoRailsRepositoryModule,
         videoPlayerRepositoryModule,

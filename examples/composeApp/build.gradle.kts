@@ -22,6 +22,8 @@ wasmJsConfig {}
 kotlin {
     sourceSets {
         commonMain.dependencies {
+            implementation(libs.nav3)
+            implementation(libs.koin.compose.nav3)
             implementation(libs.serialization)
             implementation(libs.navigation.compose)
             implementation(project(":examples:composeApp:dependencies"))

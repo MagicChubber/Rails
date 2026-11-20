@@ -10,8 +10,7 @@ import kotlinx.coroutines.launch
 
 class VideoPlayerViewModel(
     private val fetchSelectedVideo: FetchSelectedVideoUseCase,
-    private val savedStateHandle: SavedStateHandle,
-    private val playerInfo: VideoPlayerInfo = savedStateHandle.toRoute(VideoPlayerInfo.typeMap)
+    private val playerInfo: VideoPlayerInfo
 ) : VideoPlayerUniflow,
     UniflowViewModel<VideoPlayerEvent, VideoPlayerUiState, VideoPlayerSideEffect>(
         initialUiState = VideoPlayerUiState(

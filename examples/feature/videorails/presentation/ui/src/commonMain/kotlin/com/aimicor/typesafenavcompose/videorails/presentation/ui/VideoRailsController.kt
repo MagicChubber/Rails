@@ -12,7 +12,7 @@ import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun VideoRailsController(
-    uniflow: VideoRailsUniflow = koinViewModel<VideoRailsViewModel>(),
+    uniflow: VideoRailsUniflow,
     navigate: (VideoPlayerInfo) -> Unit
 ) {
     val state by uniflow.uiState.collectStateFlow()

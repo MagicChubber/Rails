@@ -5,5 +5,5 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 
 val videoPlayerStateModule = module {
-    viewModel { VideoPlayerViewModel(get(), get()) } bind VideoPlayerUniflow::class
+    viewModel { playerInfo -> VideoPlayerViewModel(get(), playerInfo.get()) } bind VideoPlayerUniflow::class
 }

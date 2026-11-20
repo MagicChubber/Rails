@@ -11,7 +11,9 @@ kotlin {
             implementation(project(":examples:infrastructure:collect"))
         }
         commonMain.dependencies {
+            implementation(libs.nav3)
             implementation(libs.koin.compose.viewmodel)
+            implementation(libs.koin.compose.nav3)
             implementation(libs.navigation.compose)
             implementation(project(":examples:infrastructure:uniflow"))
             implementation(project(":examples:feature:videorails:domain:entity"))
