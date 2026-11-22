@@ -9,6 +9,7 @@ import kotlinx.serialization.json.Json
 import net.thauvin.erik.urlencoder.UrlEncoderUtil
 import kotlin.reflect.typeOf
 
+@Deprecated("no longer needed. nav3 allows complex datatypes to be passed between screens")
 inline fun <reified T : Any> serializableType(
     isNullableAllowed: Boolean = false,
     json: Json = Json,

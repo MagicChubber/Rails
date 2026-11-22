@@ -1,4 +1,5 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+import org.jetbrains.compose.reload.gradle.lifecycle
 
 plugins {
     id("multiplatform-compose-app")
@@ -25,6 +26,8 @@ kotlin {
             implementation(libs.nav3)
             implementation(libs.koin.compose.nav3)
             implementation(libs.serialization)
+            implementation(libs.nav3)
+            implementation(libs.lifecycle.nav3)
             implementation(project(":examples:composeApp:dependencies"))
         }
     }
