@@ -29,4 +29,5 @@ inline fun <reified T : Any> serializableType(
     }
 }
 
+@Deprecated("no longer needed. nav3 allows complex datatypes to be passed between screens")
 inline fun <reified T : Any> typePair() = typeOf<T>() to serializableType<T>()
