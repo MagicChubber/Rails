@@ -1,4 +1,5 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+import org.jetbrains.compose.reload.gradle.lifecycle
 
 plugins {
     id("multiplatform-compose-app")
@@ -22,15 +23,12 @@ wasmJsConfig {}
 kotlin {
     sourceSets {
         commonMain.dependencies {
+            implementation(libs.nav3)
+            implementation(libs.koin.compose.nav3)
             implementation(libs.serialization)
-            implementation(libs.navigation.compose)
+            implementation(libs.nav3)
+            implementation(libs.lifecycle.nav3)
             implementation(project(":examples:composeApp:dependencies"))
-            implementation(project(":examples:feature:videorails:presentation:ui"))
-            implementation(project(":examples:feature:videorails:presentation:state"))
-            implementation(project(":examples:feature:videoplayer:presentation:ui"))
-            implementation(project(":examples:feature:videoplayer:presentation:state"))
-            implementation(project(":examples:infrastructure:collect"))
-            implementation(project(":examples:infrastructure:navtype"))
         }
     }
 }

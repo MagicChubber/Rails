@@ -2,27 +2,28 @@ package com.aimicor.navcompose.typesafe
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import com.aimicor.typesafenavcompose.videoplayer.presentation.state.VideoPlayerInfo
-import com.aimicor.typesafenavcompose.videoplayer.presentation.ui.VideoPlayerController
-import com.aimicor.typesafenavcompose.videorails.presentation.ui.VideoRailsController
-import kotlinx.serialization.Serializable
-
-@Serializable
-data object Rails
+import androidx.compose.runtime.snapshots.SnapshotStateList
+import androidx.lifecycle.viewmodel.navigation3.rememberViewModelStoreNavEntryDecorator
+import androidx.navigation3.runtime.rememberSaveableStateHolderNavEntryDecorator
+import androidx.navigation3.ui.NavDisplay
+import org.koin.compose.koinInject
+import org.koin.compose.navigation3.koinEntryProvider
+import org.koin.core.annotation.KoinExperimentalAPI
 
 @Composable
+@OptIn(KoinExperimentalAPI::class)
 fun App() {
-    val navController = rememberNavController()
+    val backStack: SnapshotStateList<Any> = koinInject()
     MaterialTheme {
-        NavHost(
-            navController = navController,
-            startDestination = Rails
-        ) {
-            composable<Rails> { VideoRailsController() { navController.navigate(it) } }
-            composable<VideoPlayerInfo>(VideoPlayerInfo.typeMap) { VideoPlayerController() }
-        }
+        NavDisplay(
+            backStack = backStack,
+            onBack = { backStack.removeLastOrNull() },
+            entryDecorators = listOf(
+                rememberSaveableStateHolderNavEntryDecorator(),
+                rememberViewModelStoreNavEntryDecorator()
+            ),
+            entryProvider = koinEntryProvider()
+        )
     }
 }
+
